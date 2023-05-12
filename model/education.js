@@ -1,0 +1,58 @@
+module.exports.education = [
+    {
+        "id": 0,
+        "type": "school",
+        "name": "New Future",
+        "city": "Sadat City",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 1,
+        "type": "college",
+        "name": "University of Sadat City",
+        "city": "Sadat City",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 2,
+        "type": "school",
+        "name": "Talat Harb School",
+        "city": "6th October",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 3,
+        "type": "college",
+        "name": "Nile University",
+        "city": "6th October",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 4,
+        "type": "college",
+        "name": "MUST University",
+        "city": "6th October",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 5,
+        "type": "school",
+        "name": "Saadiya School",
+        "city": "Cairo",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 6,
+        "type": "college",
+        "name": "Cairo University",
+        "city": "Cairo",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+    {
+        "id": 7,
+        "type": "college",
+        "name": "Ain Shams University",
+        "city": "Cairo",
+        "location": { "long": -120.232, "lat": -14.045 },
+    },
+]
