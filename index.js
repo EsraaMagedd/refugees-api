@@ -63,7 +63,11 @@ app.get('/jobs', (req, res) => {
     res.json(jobs)
 })
 app.get('/jobs/:id', (req, res) => {
-    res.json(jobs[req.params.id])
+    for (const job of jobs) {
+        if (job.id == req.params.id) {
+            res.json(job)
+        }
+    }
 })
 app.get('/cities/:id/jobs', (req, res) => {
     let requestedJobs = []
@@ -74,7 +78,7 @@ app.get('/cities/:id/jobs', (req, res) => {
     }
     res.send(JSON.stringify(requestedJobs))
 })
-app.post('/jobs/:id', (req, res) => {
+app.post('/jobs', (req, res) => {
     if (req.body != null) {
         jobs.push(req.body)
         res.send(JSON.stringify(req.body))
@@ -123,8 +127,12 @@ app.get('/cities/:id/services/:type', (req, res) => {
     }
     res.send(JSON.stringify(requestedServices))
 })
-app.get('service/:id', (req, res) => {
-    res.send(JSON.stringify(services[req.params.id]))
+app.get('/services/:id', (req, res) => {
+    for (const service of services) {
+        if (service.id == req.params.id) {
+            res.json(service)
+        }
+    }
 })
 app.post('/services', (req, res) => {
     if (req.body != null) {
@@ -162,7 +170,11 @@ app.get('/offers', (req, res) => {
     res.json(housingOffers)
 })
 app.get('/offers/:id', (req, res) => {
-    res.json(housingOffers[req.params.id])
+    for (const offer of housingOffers) {
+        if (offer.id == req.params.id) {
+            res.json(offer)
+        }
+    }
 })
 app.post('/offers', (req, res) => {
     if (req.body != null) {
@@ -196,37 +208,26 @@ app.delete('/offers/:id', (req, res) => {
 app.get('/cities/:id/offers', (req, res) => {
     let requestedHousing = []
     for (let i = 0; i < housingOffers.length; i++) {
-        if (housingOffers[i].city == cities[req.params.id].name) {
-            requestedHousing.push(housingOffers[i])
+        for (const city of cities) {
+            if (city.id == req.params.id && city.name == housingOffers[i].city) {
+                requestedHousing.push(housingOffers[i])
+            }
         }
     }
     res.send(JSON.stringify(requestedHousing))
 })
-// app.get('/offers/:type', (req, res) => {
-//     let requestedHousing = []
-//     for (let i = 0; i < housingOffers.length; i++) {
-//         if (housingOffers[i].type == req.params.type) {
-//             requestedHousing.push(housingOffers[i])
-//         }
-//     }
-//     res.send(JSON.stringify(requestedHousing))
-// })
-app.get('/cities/:id/offers/:type', (req, res) => {
-    let requestedHousing = []
-    for (let i = 0; i < housingOffers.length; i++) {
-        if (housingOffers[i].city == cities[req.params.id].name && housingOffers[i].type == req.params.type) {
-            requestedHousing.push(housingOffers[i])
-        }
-    }
-    res.send(JSON.stringify(requestedHousing))
-})
+
 
 // Cafe routes
 app.get('/cafe', (req, res) => {
     res.json(cafe)
 })
 app.get('/cafe/:id', (req, res) => {
-    res.json(cafe[req.params.id])
+    for (const cafe of cafe) {
+        if (cafe.id == req.params.id) {
+            res.json(cafe)
+        }
+    }
 })
 app.post('/cafe', (req, res) => {
     if (req.body != null) {
@@ -260,8 +261,10 @@ app.delete('/cafe/:id', (req, res) => {
 app.get('/cities/:id/cafe', (req, res) => {
     let requestedCafes = []
     for (let i = 0; i < cafe.length; i++) {
-        if (cafe[i].city == cities[req.params.id].name) {
-            requestedCafes.push(cafe[i])
+        for (const city of cities) {
+            if (city.id == req.params.id && cafe[i].city === city.name) {
+                requestedCafes.push(cafe[i])
+            }
         }
     }
     res.send(JSON.stringify(requestedCafes))
@@ -272,9 +275,13 @@ app.get('/education', (req, res) => {
     res.json(education)
 })
 app.get('/education/:id', (req, res) => {
-    res.json(education[req.params.id])
+    for (const edu of education) {
+        if (edu.id == req.params.id) {
+            res.json(edu)
+        }
+    }
 })
-app.post('/education/:id', (req, res) => {
+app.post('/education', (req, res) => {
     if (req.body != null) {
         education.push(req.body)
         res.send(JSON.stringify(req.body))
@@ -306,26 +313,22 @@ app.delete('/education/:id', (req, res) => {
 app.get('/cities/:id/education', (req, res) => {
     let requestedEducations = []
     for (let i = 0; i < education.length; i++) {
-        if (education[i].city == cities[req.params.id].name) {
-            requestedEducations.push(education[i])
+        for (const city of cities) {
+            if (city.id == req.params.id && education[i].city == city.name) {
+                requestedEducations.push(education[i])
+            }
         }
     }
     res.send(JSON.stringify(requestedEducations))
 })
-// app.get('/education/:type', (req, res) => {
-//     let requestedEducations = []
-//     for (let i = 0; i < education.length; i++) {
-//         if (education[i].type == req.params.type) {
-//             requestedEducations.push(education[i])
-//         }
-//     }
-//     res.send(JSON.stringify(requestedEducations))
-// })
+
 app.get('/cities/:id/education/:type', (req, res) => {
     let requestedEducations = []
     for (let i = 0; i < education.length; i++) {
-        if (education[i].city == cities[req.params.id].name && education[i].type == req.params.type) {
-            requestedEducations.push(education[i])
+        for (const city of cities) {
+            if (city.id == req.params.id && education[i].city == city.name && education[i].type == req.params.type) {
+                requestedEducations.push(education[i]);
+            }
         }
     }
     res.send(JSON.stringify(requestedEducations))

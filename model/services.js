@@ -1,5 +1,6 @@
 module.exports.services = [
     {
+        "id": 0,
         "type": "hospital",
         "city": "Sadat City",
         "name": "Sadat City General Hosptial",
@@ -7,6 +8,7 @@ module.exports.services = [
         "hotline": "62318",
     },
     {
+        "id": 1,
         "type": "hospital",
         "city": "6th October",
         "name": "Dar Alfouad",
@@ -14,6 +16,7 @@ module.exports.services = [
         "hotline": "12323",
     },
     {
+        "id": 2,
         "type": "hospital",
         "city": "6th October",
         "name": "Saad Zaghlol",
@@ -21,6 +24,7 @@ module.exports.services = [
         "hotline": "66464",
     },
     {
+        "id": 3,
         "type": "hospital",
         "city": "Cairo",
         "name": "Alnas",
@@ -28,6 +32,7 @@ module.exports.services = [
         "hotline": "12032",
     },
     {
+        "id": 4,
         "type": "hospital",
         "city": "Cairo",
         "name": "Aldemerdash",
@@ -35,6 +40,7 @@ module.exports.services = [
         "hotline": "34426",
     },
     {
+        "id": 5,
         "type": "managerial",
         "city": "6th October",
         "name": "Gehaz Madinet October",
@@ -42,6 +48,7 @@ module.exports.services = [
         "hotline": "N/A",
     },
     {
+        "id": 6,
         "type": "managerial",
         "city": "Sadat City",
         "name": "Gehaz Madinet AlSadat",
@@ -49,6 +56,7 @@ module.exports.services = [
         "hotline": "N/A",
     },
     {
+        "id": 7,
         "type": "judge",
         "city": "Sadat City",
         "name": "Sadat City's Court",
@@ -56,6 +64,7 @@ module.exports.services = [
         "hotline": "N/A",
     },
     {
+        "id": 8,
         "type": "judge",
         "city": "Cairo",
         "name": "Giza's Court",
@@ -63,6 +72,7 @@ module.exports.services = [
         "hotline": "N/A",
     },
     {
+        "id": 9,
         "type": "pharmacy",
         "city": "Cairo",
         "name": "Elezaby Pharmacies",
@@ -70,6 +80,7 @@ module.exports.services = [
         "hotline": "61555",
     },
     {
+        "id": 10,
         "type": "pharmacy",
         "city": "6th October",
         "name": "Elezaby Pharmacies",
@@ -77,6 +88,7 @@ module.exports.services = [
         "hotline": "61555",
     },
     {
+        "id": 11,
         "type": "pharmacy",
         "city": "Sadat City",
         "name": "Dr Sami Farrag pharmacy",
@@ -84,6 +96,7 @@ module.exports.services = [
         "hotline": "61512",
     },
     {
+        "id": 12,
         "type": "pharmacy",
         "city": "Sadat City",
         "name": "Dr Ahmed Noah pharmacy",
@@ -91,6 +104,7 @@ module.exports.services = [
         "hotline": "61512",
     },
     {
+        "id": 13,
         "type": "pharmacy",
         "city": "Sadat City",
         "name": "Dr Hesham Azzam pharmacy",
