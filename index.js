@@ -223,9 +223,9 @@ app.get('/cafe', (req, res) => {
     res.json(cafe)
 })
 app.get('/cafe/:id', (req, res) => {
-    for (const cafe of cafe) {
-        if (cafe.id == req.params.id) {
-            res.json(cafe)
+    for (const c of cafe) {
+        if (c.id == req.params.id) {
+            res.json(c)
         }
     }
 })
