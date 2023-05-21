@@ -434,7 +434,7 @@ app.delete('/education/:id', (req, res) => {
         }
     }
     if (deleteEducation == undefined)
-        res.status(400).json({ message: 'Bad Request' })
+        res.status(404).json({ message: 'Cafe not found' })
     else
         res.status(200).json((deleteEducation))
 })
