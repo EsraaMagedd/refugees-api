@@ -22,6 +22,17 @@ app.get('/cities', (req, res) => {
 })
 
 app.get('/cities/:id', (req, res) => {
+    let index = -1
+    for (let i = 0; i < cities.length; i++) {
+        if (cities[i].id == req.params.id) {
+            index = i;
+            break
+        }
+    }
+    if (index == -1) {
+        res.status(404).json({ message: 'City not found' })
+        return;
+    }
     res.status(200).json(cities[req.params.id])
 })
 
